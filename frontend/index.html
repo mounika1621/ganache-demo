@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Supply Chain Traceability</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ethers.js -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.15.0/dist/ethers.umd.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌾 Food Supply Chain</h1>
+        <p>Blockchain-based Food Traceability</p>
+
+        <button id="connectButton">
+            Connect MetaMask
+        </button>
+
+        <div id="walletStatus">
+            Wallet not connected
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Add Product -->
+        <section class="card">
+
+            <h2>Add Food Product</h2>
+
+            <label>Product Name</label>
+            <input
+                type="text"
+                id="productName"
+                placeholder="Example: Rice"
+            >
+
+            <label>Farmer Name</label>
+            <input
+                type="text"
+                id="farmerName"
+                placeholder="Example: Mounika"
+            >
+
+            <label>Origin</label>
+            <input
+                type="text"
+                id="origin"
+                placeholder="Example: Coimbatore"
+            >
+
+            <button id="addProductButton">
+                Add Product
+            </button>
+
+            <p id="message"></p>
+
+        </section>
+
+
+        <!-- Update Stage -->
+        <section class="card">
+
+            <h2>Update Supply Chain Stage</h2>
+
+            <label>Product ID</label>
+            <input
+                type="number"
+                id="productId"
+                value="1"
+                min="1"
+            >
+
+            <label>Stage</label>
+
+            <select id="stageName">
+                <option value="PROCESSING">PROCESSING</option>
+                <option value="DISTRIBUTION">DISTRIBUTION</option>
+                <option value="RETAIL">RETAIL</option>
+                <option value="CONSUMED">CONSUMED</option>
+            </select>
+
+            <label>Actor Name</label>
+
+            <input
+                type="text"
+                id="actorName"
+                placeholder="Example: ABC Processor"
+            >
+
+            <label>Location</label>
+
+            <input
+                type="text"
+                id="stageLocation"
+                placeholder="Example: Coimbatore"
+            >
+
+            <button id="updateStageButton">
+                Update Stage
+            </button>
+
+        </section>
+
+
+        <!-- Search Product -->
+        <section class="card">
+
+            <h2>View Product</h2>
+
+            <label>Product ID</label>
+
+            <input
+                type="number"
+                id="viewProductId"
+                value="1"
+                min="1"
+            >
+
+            <button id="viewProductButton">
+                View Product
+            </button>
+
+            <div id="productDetails"></div>
+
+        </section>
+
+
+        <!-- History -->
+        <section class="card">
+
+            <h2>Supply Chain History</h2>
+
+            <button id="historyButton">
+                View History
+            </button>
+
+            <div id="history"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Powered by Solidity • Ganache • MetaMask • Ethereum</p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
